@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header class="header">
+            <!-- Блок хедера -->
+            <p style="font-size: 30px; margin: 0; padding: 10px 1em;">Header</p>
+            {% block header %}
+            {% endblock header %}
+        </header>
+
+        <div class="container">
+            <main class="content">
+                <!-- Блок контента -->
+                <p style="text-align: center;">Content</p>
+                {% block content %}
+                {% endblock content %}
+            </main>
+            <aside class="sidebar">
+                <!-- Блок сайдбара -->
+                <p style="text-align: center;">Sidebar</p>
+                {% block sidebar %}
+                {% endblock sidebar %}
+            </aside>
+        </div>
+
+        <footer class="footer">
+            <!-- Блок футера -->
+            <p style="font-size: 30px; margin: 0; padding: 10px 1em;">Footer</p>
+            {% block footer %}
+            {% endblock footer %}
+        </footer>
+    </div>
+</body>
+</html>
