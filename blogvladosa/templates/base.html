@@ -6,38 +6,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <title>{{title}}</title>
 </head>
 <body>
-    <div class="content-wrapper">
-        <header class="header">
-            <!-- Блок хедера -->
-            <p style="font-size: 30px; margin: 0; padding: 10px 1em;">Header</p>
-            {% block header %}
-            {% endblock header %}
-        </header>
 
-        <div class="container">
-            <main class="content">
-                <!-- Блок контента -->
-                <p style="text-align: center;">Content</p>
-                {% block content %}
-                {% endblock content %}
-            </main>
-            <aside class="sidebar">
-                <!-- Блок сайдбара -->
-                <p style="text-align: center;">Sidebar</p>
-                {% block sidebar %}
-                {% endblock sidebar %}
-            </aside>
+<header>
+    <a href="#" class="logo">logo</a>
+    <nav class="menu">
+        <a href="#">Добавить статью</a>
+        <a href="#">Архив</a>
+        <a href="#">Войти</a>
+    </nav>
+</header>
+
+<main>
+    <article class="content">
+        <div class="content-name">Недавние статьи</div>
+        <div class="content-container">
+            <!-- Посты -->
         </div>
+    </article>
+    <aside class="sidebar">
+        <div class="sidebar-name">Категории</div>
+        <!-- Категории -->
+    </aside>
+</main>
 
-        <footer class="footer">
-            <!-- Блок футера -->
-            <p style="font-size: 30px; margin: 0; padding: 10px 1em;">Footer</p>
-            {% block footer %}
-            {% endblock footer %}
-        </footer>
-    </div>
+<footer>
+    <a href="#">О проекте</a>
+</footer>
+
 </body>
 </html>
