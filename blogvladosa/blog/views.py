@@ -4,7 +4,11 @@ from django.views import generic
 
 
 def home(request):
-    return HttpResponse('HomePage')
+    return render(request, 'base.html')
+
+
+def category(request, cat_slug):
+    return HttpResponse('CategoryPage')
 
 
 def detail(request):
