@@ -11,7 +11,7 @@ def category(request, cat_slug):
     return HttpResponse('CategoryPage')
 
 
-def detail(request):
+def detail(request, post_pk):
     return HttpResponse('DetailPage')
 
 
