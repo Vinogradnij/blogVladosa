@@ -16,7 +16,7 @@ def detail(request, post_pk):
 
 
 def create(request):
-    return HttpResponse('CreatePage')
+    return render(request, 'blog/create.html')
 
 
 def archive(request):
