@@ -10,9 +10,9 @@ body {
     background-color: #14593e;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
+    color: #d2e0c9;
+    border-color: #d2e0c9;
 }
-
-
 
 header {
     flex 0 0 auto;
@@ -20,7 +20,7 @@ header {
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    border-bottom: 1px solid #d2e0c9;
+    border-bottom: 1px solid;
 }
 
 .logo {
@@ -28,8 +28,8 @@ header {
     padding: 10px;
     border: 1px solid #d2e0c9;
     border-radius: 5px;
-    text-decoration: none;
     color: #d2e0c9;
+    text-decoration: none;
 }
 
 .menu {
@@ -56,7 +56,7 @@ main {
     justify-content: space-between;
 }
 
-.content {
+.home-content {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
@@ -68,7 +68,6 @@ main {
 .content-name {
     margin: 10px;
     padding: 10px;
-    color: #d2e0c9;
 }
 
 .content-container {
@@ -80,9 +79,17 @@ main {
 .content-container div {
     margin: 10px;
     padding: 10px;
-    border: 1px solid #d2e0c9;
+    border: 1px solid;
     border-radius: 5px;
-    color: #d2e0c9;
+}
+
+.detail-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .sidebar {
@@ -90,21 +97,19 @@ main {
     flex: 0 0 20%;
     flex-direction: column;
     align-items: center;
-    border-left: 1px solid #d2e0c9;
+    border-left: 1px solid;
 }
 
 .sidebar div {
     margin: 10px;
     padding: 10px;
-    border: 1px solid #d2e0c9;
+    border: 1px solid;
     border-radius: 5px;
-    color: #d2e0c9;
 }
 
 .sidebar .sidebar-name {
     margin: 10px;
     padding: 10px;
-    color: #d2e0c9;
     border: 0px;
 }
 
@@ -115,7 +120,7 @@ footer {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    border-top: 1px solid #d2e0c9;
+    border-top: 1px solid;
 }
 
 footer a {
@@ -124,6 +129,6 @@ footer a {
     text-align: center;
     border: 1px solid #d2e0c9;
     border-radius: 5px;
-    text-decoration: none;
     color: #d2e0c9;
+    text-decoration: none;
 }

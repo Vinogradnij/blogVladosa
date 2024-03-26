@@ -12,7 +12,7 @@ def category(request, cat_slug):
 
 
 def detail(request, post_pk):
-    return HttpResponse('DetailPage')
+    return render(request, 'blog/detail.html', context={'post_pk': post_pk})
 
 
 def create(request):
