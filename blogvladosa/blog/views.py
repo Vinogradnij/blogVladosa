@@ -4,7 +4,7 @@ from django.views import generic
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'blog/home.html')
 
 
 def category(request, cat_slug):
