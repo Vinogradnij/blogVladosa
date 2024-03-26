@@ -12,9 +12,9 @@
 <body>
 
 <header>
-    <a href="#" class="logo">logo</a>
+    <a href="{% url 'blog:home' %}" class="logo">logo</a>
     <nav class="menu">
-        <a href="#">Добавить статью</a>
+        <a href="{% url 'blog:create' %}">Добавить статью</a>
         <a href="#">Архив</a>
         <a href="#">Войти</a>
     </nav>

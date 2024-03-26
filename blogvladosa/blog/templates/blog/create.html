@@ -1,9 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-
 <article class="create-content">
-    <div>Страница создания поста</div>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Опубликовать</button>
+    </form>
 </article>
 
 {% endblock %}
