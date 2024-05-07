@@ -2,10 +2,10 @@
 
 {% block content %}
 <article class="create-content">
-    <form action="" method="post">
+    <form action="" method="post" class="create-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Опубликовать</button>
+        <input type="submit" value="Опубликовать">
     </form>
 </article>
 

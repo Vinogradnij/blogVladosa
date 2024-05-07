@@ -101,6 +101,17 @@ main {
     flex-wrap: wrap;
 }
 
+input[type=submit] {
+    background-color: #d2e0c9;
+    border: none;
+    color: #14593e;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 .sidebar {
     display: flex;
     flex: 0 0 20%;
