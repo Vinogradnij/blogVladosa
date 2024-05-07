@@ -30,6 +30,11 @@
     <aside class="sidebar">
         <div class="sidebar-name">Категории</div>
             <!-- Категории -->
+            {% for category in categories %}
+                <div>{{ category }}</div>
+            {% empty %}
+                Нет категорий
+            {% endfor %}
     </aside>
 </main>
 

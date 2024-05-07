@@ -3,7 +3,10 @@
 {% block content %}
 
 <article class="detail-content">
-    <div>Контент поста {{ post_pk }}</div>
+    <div class="detail-title">{{ post.title }}</div>
+    <div class="detail-category">Категория: {{ post.category }}</div>
+    <div class="detail-time_create">Дата публикации: {{ post.time_create }}</div>
+    <div class="detail-content">{{ post.content }}</div>
 </article>
 
 {% endblock %}

@@ -128,13 +128,36 @@ main {
 }
 
 .detail-content {
-    display: flex;
     flex: 1 1 auto;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    background-color: #d2e0c9;
+    color: #14593e;
+    padding: 10px;
 }
+
+.detail-title {
+    font-size: 48px;
+    padding: 10px;
+}
+
+.detail-category {
+    font-size: 24px;
+    padding: 10px;
+}
+
+.detail-time_create {
+    font-size: 24px;
+    padding: 10px;
+}
+
+.detail-content {
+    padding: 10px;
+}
+
 
 .create-content {
     display: flex;

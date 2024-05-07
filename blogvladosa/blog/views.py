@@ -11,6 +11,7 @@ class BlogHome(generic.ListView):
     context_object_name = 'posts'
     extra_context = {
         'title': 'Главная страница',
+        'categories': models.Category.objects.all()
     }
 
     def get_queryset(self):
@@ -23,6 +24,19 @@ def category(request, cat_slug):
 
 def detail(request, post_pk):
     return render(request, 'blog/detail.html', context={'post_pk': post_pk})
+
+
+class BlogDetail(generic.DetailView):
+    model = models.Post
+    template_name = 'blog/detail.html'
+    context_object_name = 'post'
+    pk_url_kwarg = 'post_pk'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = context['post']
+        context['categories'] = models.Category.objects.all()
+        return context
 
 
 class CreatePost(generic.CreateView):
