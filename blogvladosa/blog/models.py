@@ -41,6 +41,11 @@ class Category(models.Model):
         return reverse('category', kwargs={'cat_slug': self.slug})
 
 
+class PostManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=True)
+
+
 class Post(models.Model):
     class Status(models.IntegerChoices):
         DRAFT = 0, 'Черновик'
@@ -96,6 +101,9 @@ class Post(models.Model):
         verbose_name = 'пост'
         verbose_name_plural = 'посты'
         db_table_comment = 'Посты пользователей'
+
+    objects = models.Manager()
+    published = PostManager()
 
     def __str__(self):
         return self.title
