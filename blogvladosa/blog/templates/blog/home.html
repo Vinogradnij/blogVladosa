@@ -9,7 +9,7 @@
         {% for post in posts %}
         <div class="content-post">
             <div class="post-container">
-                <div class="content-post-title">{{ post.title }}</div>
+                <div class="content-post-title">{{ post.title|truncatechars:20 }}</div>
                 <div class="content-post-category">Категория: {{ post.category }}</div>
                 <div class="content-post-content">{{ post.content|truncatewords:20 }}</div>
             </div>
