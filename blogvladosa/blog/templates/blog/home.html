@@ -6,6 +6,17 @@
     <div class="content-name">Недавние статьи</div>
     <div class="content-container">
         <!-- Посты -->
+        {% for post in posts %}
+        <div class="content-post">
+            <div>
+                {{ post.title }}
+                {{ post.category }}
+                {{ post.content }}
+            </div>
+        </div>
+        {% empty %}
+            Нет опубликованных постов
+        {% endfor %}
     </div>
 </article>
 

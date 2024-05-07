@@ -6,8 +6,15 @@ from django.views import generic
 from . import models
 
 
-def home(request):
-    return render(request, 'blog/home.html', context={'title': 'Главная страница'})
+class BlogHome(generic.ListView):
+    template_name = 'blog/home.html'
+    context_object_name = 'posts'
+    extra_context = {
+        'title': 'Главная страница',
+    }
+
+    def get_queryset(self):
+        return models.Post.published.all()
 
 
 def category(request, cat_slug):
