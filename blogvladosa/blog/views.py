@@ -18,12 +18,19 @@ class BlogHome(generic.ListView):
         return models.Post.published.all()
 
 
-def category(request, cat_slug):
-    return HttpResponse('CategoryPage')
+class BlogCategory(generic.ListView):
+    template_name = 'blog/home.html'
+    context_object_name = 'posts'
+    slug_url_kwarg = 'cat_slug'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = models.Category.objects.all()
+        context['title'] = f"Категория: {context['categories'].get(slug=self.kwargs['cat_slug'])}"
+        return context
 
-def detail(request, post_pk):
-    return render(request, 'blog/detail.html', context={'post_pk': post_pk})
+    def get_queryset(self, **kwargs):
+        return models.Post.published.filter(category__slug=self.kwargs['cat_slug'])
 
 
 class BlogDetail(generic.DetailView):
