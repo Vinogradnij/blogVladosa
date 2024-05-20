@@ -101,6 +101,7 @@ class Post(models.Model):
         verbose_name = 'пост'
         verbose_name_plural = 'посты'
         db_table_comment = 'Посты пользователей'
+        ordering = ['-time_create']
 
     objects = models.Manager()
     published = PostManager()
