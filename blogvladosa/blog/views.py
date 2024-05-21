@@ -53,7 +53,7 @@ class BlogDetail(utils.DataMixin, generic.DetailView):
         )
 
 
-class CreatePost(utils.DataMixin, generic.CreateView):
+class BlogCreate(utils.DataMixin, generic.CreateView):
     model = models.Post
     template_name = 'blog/create.html'
     success_url = reverse_lazy('blog:home')
