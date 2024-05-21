@@ -2,6 +2,7 @@
 
 {% block content %}
 <article class="create-content">
+    <div class="content-name">{{ content_name }}</div>
     <form action="" method="post" class="create-form">
         {% csrf_token %}
         {{ form.as_p }}

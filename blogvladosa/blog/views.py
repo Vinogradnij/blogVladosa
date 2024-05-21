@@ -63,6 +63,7 @@ class BlogCreate(utils.DataMixin, generic.CreateView):
         return self.get_mixin_context(
             context=super().get_context_data(**kwargs),
             title='Создание поста',
+            content_name='Создайте свой пост',
         )
 
 
