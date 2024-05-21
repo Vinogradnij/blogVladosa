@@ -24,15 +24,16 @@ header {
 }
 
 a {
+    padding: 10px;
+    border: 1px solid #d2e0c9;
+    border-radius: 5px;
     text-decoration: none;
+    color: #d2e0c9;
+    text-align: center;
 }
 
 .logo {
     margin: 10px;
-    padding: 10px;
-    border: 1px solid #d2e0c9;
-    border-radius: 5px;
-    color: #d2e0c9;
 }
 
 .menu {
@@ -45,9 +46,6 @@ a {
     margin: 10px;
     padding: 10px;
     text-align: center;
-    border: 1px solid #d2e0c9;
-    border-radius: 5px;
-    color: #d2e0c9;
 }
 
 main {
@@ -128,9 +126,7 @@ main {
 }
 
 .content-post-read a {
-    padding: 10px;
     border: 1px solid #14593e;
-    border-radius: 5px;
     color: #14593e;
 }
 
@@ -138,9 +134,6 @@ main {
     margin: 3px;
     padding: 3px;
     text-align: center;
-    border: 1px solid #d2e0c9;
-    border-radius: 5px;
-    color: #d2e0c9;
 }
 
 .detail-content {
@@ -205,18 +198,10 @@ input[type=submit] {
 .sidebar div {
     margin: 10px;
     padding: 10px;
-    border: 1px solid;
-    border-radius: 5px;
 }
 
-.sidebar div a {
-    color: #d2e0c9;
-}
 
 .sidebar .sidebar-name {
-    margin: 10px;
-    padding: 10px;
-    border: 0px;
     font-size: 24px;
 }
 
@@ -232,9 +217,4 @@ footer {
 
 footer a {
     margin: 10px;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #d2e0c9;
-    border-radius: 5px;
-    color: #d2e0c9;
 }
