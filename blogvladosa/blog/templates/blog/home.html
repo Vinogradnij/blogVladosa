@@ -23,6 +23,25 @@
             Нет опубликованных постов
         {% endfor %}
     </div>
+    {% if page_obj.has_other_pages %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">В начало</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+            {% endif %}
+
+            <span class="current">
+                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Далее</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">В конец</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
 </article>
 
 {% endblock %}

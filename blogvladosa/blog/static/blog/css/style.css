@@ -134,6 +134,15 @@ main {
     color: #14593e;
 }
 
+.step-links a {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid #d2e0c9;
+    border-radius: 5px;
+    color: #d2e0c9;
+}
+
 .detail-content {
     flex: 1 1 auto;
     display: flex;
