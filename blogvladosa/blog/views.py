@@ -4,36 +4,40 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from . import models
+from . import utils
 
 
-class BlogHome(generic.ListView):
+class BlogHome(utils.DataMixin, generic.ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
-    extra_context = {
-        'title': 'Главная страница',
-        'categories': models.Category.objects.all()
-    }
+
+    def get_context_data(self, **kwargs):
+        return self.get_mixin_context(
+            context=super().get_context_data(**kwargs),
+            title='Главная страница',
+        )
 
     def get_queryset(self):
         return models.Post.published.all()
 
 
-class BlogCategory(generic.ListView):
+class BlogCategory(utils.DataMixin, generic.ListView):
     template_name = 'blog/category.html'
     context_object_name = 'posts'
     slug_url_kwarg = 'cat_slug'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categories'] = models.Category.objects.all()
-        context['title'] = f"Категория: {context['categories'].get(slug=self.kwargs['cat_slug'])}"
-        return context
+        category = models.Category.objects.get(slug=self.kwargs['cat_slug'])
+        return self.get_mixin_context(
+            context=super().get_context_data(**kwargs),
+            title=f'Категория: {category}',
+        )
 
     def get_queryset(self, **kwargs):
         return models.Post.published.filter(category__slug=self.kwargs['cat_slug'])
 
 
-class BlogDetail(generic.DetailView):
+class BlogDetail(utils.DataMixin, generic.DetailView):
     model = models.Post
     template_name = 'blog/detail.html'
     context_object_name = 'post'
@@ -41,19 +45,23 @@ class BlogDetail(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = context['post']
-        context['categories'] = models.Category.objects.all()
-        return context
+        return self.get_mixin_context(
+            context=context,
+            title=context['post'],
+        )
 
 
-class CreatePost(generic.CreateView):
+class CreatePost(utils.DataMixin, generic.CreateView):
     model = models.Post
     template_name = 'blog/create.html'
     success_url = reverse_lazy('blog:home')
     fields = ['title', 'content', 'category', 'is_published']
-    extra_context = {
-        'title': 'Создание поста'
-    }
+
+    def get_context_data(self, **kwargs):
+        return self.get_mixin_context(
+            context=super().get_context_data(**kwargs),
+            title='Создание поста',
+        )
 
 
 def archive(request):
