@@ -15,6 +15,7 @@ class BlogHome(utils.DataMixin, generic.ListView):
         return self.get_mixin_context(
             context=super().get_context_data(**kwargs),
             title='Главная страница',
+            content_name='Статьи',
         )
 
     def get_queryset(self):
@@ -31,6 +32,7 @@ class BlogCategory(utils.DataMixin, generic.ListView):
         return self.get_mixin_context(
             context=super().get_context_data(**kwargs),
             title=f'Категория: {category}',
+            content_name=f'Все статьи по категории {category}',
         )
 
     def get_queryset(self, **kwargs):
