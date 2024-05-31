@@ -10,6 +10,4 @@ urlpatterns = [
     path('category/<slug:cat_slug>', views.BlogCategory.as_view(), name='category'),
     path('create/', views.BlogCreate.as_view(), name='create'),
     path('archive/', views.archive, name='archive'),
-    path('login/', views.login, name='login'),
-    path('logout/', views.logout, name='logit'),
 ]
