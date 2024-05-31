@@ -1,7 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
+import django.contrib.auth.mixins as auth_mixins
 
 from . import models
 from . import utils
@@ -53,7 +53,7 @@ class BlogDetail(utils.DataMixin, generic.DetailView):
         )
 
 
-class BlogCreate(utils.DataMixin, generic.CreateView):
+class BlogCreate(auth_mixins.LoginRequiredMixin, utils.DataMixin, generic.CreateView):
     model = models.Post
     template_name = 'blog/create.html'
     success_url = reverse_lazy('blog:home')
