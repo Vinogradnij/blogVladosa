@@ -66,6 +66,11 @@ class BlogCreate(auth_mixins.LoginRequiredMixin, utils.DataMixin, generic.Create
             content_name='Создайте свой пост',
         )
 
+    def form_valid(self, form):
+        p = form.save(commit=False)
+        p.author = self.request.user
+        return super().form_valid(form)
+
 
 def archive(request):
     return HttpResponse('ArchivePage')
