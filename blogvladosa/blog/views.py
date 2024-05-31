@@ -69,11 +69,3 @@ class BlogCreate(utils.DataMixin, generic.CreateView):
 
 def archive(request):
     return HttpResponse('ArchivePage')
-
-
-def login(request):
-    return HttpResponse('LoginPage')
-
-
-def logout(request):
-    return HttpResponse('LogoutPage')
