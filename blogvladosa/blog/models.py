@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
 
@@ -94,6 +95,14 @@ class Post(models.Model):
         help_text='Категория поста',
         verbose_name='Категория',
         db_column='category'
+    )
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.SET_NULL,
+        null=True,
+        default=None,
+        help_text='Автор поста',
+        verbose_name='Автор'
     )
 
     class Meta:
